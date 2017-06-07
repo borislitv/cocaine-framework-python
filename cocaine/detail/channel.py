@@ -240,7 +240,7 @@ class Tx(PrettyPrintable):
                 headers = manage_headers(kwargs, self._header_table)
 
                 packed_data = msgpack_packb([self.session_id, method_id, args, headers])
-                self.log.info(
+                self.log.debug(
                     'send message to `%s`: channel id: %s, type: %s, length: %s bytes',
                     self.service_name,
                     self.session_id,

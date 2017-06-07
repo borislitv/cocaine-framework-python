@@ -197,7 +197,7 @@ class BaseService(object):
                 headers = manage_headers(kwargs, self._header_table['tx'])
 
                 packed_data = msgpack_packb([session, method_id, args, headers])
-                trace_logger.info(
+                trace_logger.debug(
                     'send message to `%s`: channel id: %s, type: %s, length: %s bytes',
                     self.name,
                     session,
